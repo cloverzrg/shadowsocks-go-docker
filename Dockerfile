@@ -5,5 +5,8 @@ ADD https://github.com/shadowsocks/shadowsocks-go/releases/download/1.2.1/shadow
 RUN mv /sserver/shadowsocks-server /shadowsocks-server
 COPY run.sh /run.sh
 ENV PASSWORD docker
+ENV METHOD aes-128-cfb
+# aes-128-cfb, aes-192-cfb, aes-256-cfb, bf-cfb, cast5-cfb,
+# des-cfb, rc4-md5, chacha20, salsa20, rc4, table
 EXPOSE 8373
 CMD ["sh","run.sh"]
