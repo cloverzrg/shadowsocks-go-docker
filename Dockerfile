@@ -1,9 +1,9 @@
 FROM busybox
 MAINTAINER cloverzrg@gmail.com
 
-#ADD https://github.com/shadowsocks/shadowsocks-go/releases/download/1.2.1/shadowsocks-server.tar.gz /sserver
-#RUN mv /sserver/shadowsocks-server /shadowsocks-server
-ADD shadowsocks-server /shadowsocks-server
+ADD https://github.com/shadowsocks/shadowsocks-go/releases/download/1.2.1/shadowsocks-server.tar.gz /sserver
+RUN mv /sserver/shadowsocks-server /shadowsocks-server
+# ADD shadowsocks-server /shadowsocks-server
 RUN chmod +x /shadowsocks-server
 COPY run.sh /run.sh
 ENV PASSWORD docker
